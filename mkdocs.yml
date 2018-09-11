@@ -8,7 +8,8 @@ pages:
       - Arquivos da Estrutura: angular/files.md
       - Componentes: angular/components.md
       - Diretivas: angular/directives.md
-    - PIP: pip/pip.md  
+      - Operador de Navegação Segura: angular/securitynavigationoperator.md
+    - PIP: pip/pip.md
     - MKDocs: mkdocs/mkdocs.md
     - Sobre: sobre.md
 theme: material
