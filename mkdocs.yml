@@ -1,0 +1,14 @@
+site_name: Documentação Pessoal
+pages:
+    - Home: index.md
+    - Angular:
+      - Instalação: angular/install.md
+      - Nova Aplicação com Angular CLI: angular/newapp.md
+      - Iniciar Servidor: angular/startserver.md
+      - Arquivos da Estrutura: angular/files.md
+      - Componentes: angular/components.md
+      - Diretivas: angular/directives.md
+    - PIP: pip/pip.md  
+    - MKDocs: mkdocs/mkdocs.md
+    - Sobre: sobre.md
+theme: material
