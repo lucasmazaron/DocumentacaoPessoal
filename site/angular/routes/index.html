@@ -13,7 +13,7 @@
         <meta name="description" content="Anotações de uso pessoal">
       
       
-        <link rel="canonical" href="https://documentacao-pessoal.000webhostapp.com/angular/startserver/">
+        <link rel="canonical" href="https://documentacao-pessoal.000webhostapp.com/angular/routes/">
       
       
         <meta name="author" content="Lucas Mazaron">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Iniciar Servidor - Documentação Pessoal</title>
+        <title>Rotas - Documentação Pessoal</title>
       
     
     
@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#iniciando-servidor" tabindex="1" class="md-skip">
+      <a href="../../#rotas" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -111,7 +111,7 @@
                 Documentação Pessoal
               </span>
               <span class="md-header-nav__topic">
-                Iniciar Servidor
+                Rotas
               </span>
             
           
@@ -237,20 +237,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Iniciar Servidor" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../startserver/" title="Iniciar Servidor" class="md-nav__link">
       Iniciar Servidor
     </a>
-    
   </li>
 
         
@@ -306,11 +297,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../routes/" title="Rotas" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Rotas
+      </label>
+    
+    <a href="./" title="Rotas" class="md-nav__link md-nav__link--active">
       Rotas
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#routerlinkactive" title="routerLinkActive" class="md-nav__link">
+    routerLinkActive
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -396,6 +425,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#routerlinkactive" title="routerLinkActive" class="md-nav__link">
+    routerLinkActive
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -407,19 +452,60 @@
               
                 
                 
-                <h1 id="iniciando-servidor">Iniciando servidor</h1>
-<ul>
-<li>Somente visivel na máquina de desenvolvimento</li>
-</ul>
-<div class="codehilite"><pre><span></span>  <span class="nx">ng</span> <span class="nx">serve</span>
-  <span class="nx">npm</span> <span class="nx">start</span>
+                <h1 id="rotas">Rotas</h1>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Os exemplos utilizados são baseados no meat-app que se encontra no github/cod3rcursos. São anotações do decorrer do curso.</p>
+</div>
+<p>Para marcar como area dinâmica no template, utilizar <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>.<br />
+ Dessa forma, a aplicação mudará o componente conforme as rotas.<br />
+ Para que isso funcione, devemos mapear cada componente nas rotas.<br />
+ As rotas são basicamente um array que possuem o caminho para cada componente.<br />
+<code>Rotas aceitam parâmetros, utilizando a sintax :nomeparam</code></p>
+<p><strong>Exemplo:</strong>  </p>
+<div class="codehilite"><pre><span></span>  <span class="kr">export</span> <span class="kr">const</span> <span class="nx">ROUTES</span>: <span class="kt">Route</span> <span class="o">=</span> <span class="p">[</span>
+
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">RestaurantsComponent</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;restaurant/:id&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">RestaurantsComponent</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="nx">component</span>: <span class="kt">AboutComponent</span> <span class="p">}</span>
+  <span class="p">]</span>
 </pre></div>
 
 
+<p>Em seguida, você precisa indicar que rotas serão usadas no módulo através da função <code>forRoot</code> no módulo raíz:  </p>
+<div class="codehilite"><pre><span></span>  <span class="kd">@NgModule</span><span class="p">({</span>
+    <span class="nx">declaration</span><span class="o">:</span> <span class="p">[...],</span>
+    <span class="nx">imports</span><span class="o">:</span> <span class="p">[...,</span> <span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">ROUTES</span><span class="p">)],</span>
+  <span class="p">})</span>
+
+  <span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span>
+    <span class="p">...</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<p>Ou <code>forChild</code> nos outros modulos...<br />
+======= Implementar anotações forChild</p>
+<p>Como que eu consigo navegar? Como os caminhos são acionados?  </p>
 <ul>
-<li>Visivel externamente</li>
+<li>O Modulo de routeamento disponibiliza uma diretiva chamada <code>routerLink=</code> onde podemos passar um caminho a ser acionado ou, um conjunto de parâmetros.  </li>
 </ul>
-<div class="codehilite"><pre><span></span>  <span class="nx">ng</span> <span class="nx">serve</span> <span class="o">--</span><span class="nx">host</span> <span class="mf">0.0</span><span class="p">.</span><span class="mf">0.0</span> <span class="o">--</span><span class="nx">disable</span><span class="o">-</span><span class="nx">host</span><span class="o">-</span><span class="nx">check</span>
+<div class="codehilite"><pre><span></span>  <span class="c">&lt;!-- no template de algum componente --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">routerLink</span><span class="o">=</span><span class="s">&quot;/restaurants&quot;</span><span class="p">&gt;</span>Restaurantes<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+  <span class="c">&lt;!-- ou --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="err">[</span><span class="na">routerLink</span><span class="err">]=&quot;[&#39;/</span><span class="na">restaurants</span><span class="err">&#39;]&quot;</span><span class="p">&gt;</span>Restaurantes<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2 id="routerlinkactive">routerLinkActive</h2>
+<div class="admonition question">
+<p class="admonition-title">Como Controlar o estilo dos links ativos ou não ativos?</p>
+<p>O modulo de routeamento disponibiliza uma diretiva <code>routerLinkActive=""</code>. Essa diretiva serve para mudar o estilo caso a rota abaixo do elemento esteja ativa.<br />
+Não é obrigatório o uso no elemento que estiver com o routerLink. Você pode utilizar em elementos parents.  </p>
+</div>
+<div class="codehilite"><pre><span></span>                   <span class="c">&lt;!-- active é a classe do css --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">routerLinkActive</span><span class="o">=</span><span class="s">&quot;active&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Restaurantes<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
                 
                   
@@ -441,7 +527,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../newapp/" title="Nova Aplicação com Angular CLI" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../securitynavigationoperator/" title="Operador de Navegação Segura" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -450,19 +536,19 @@
                 <span class="md-footer-nav__direction">
                   Anterior
                 </span>
-                Nova Aplicação com Angular CLI
+                Operador de Navegação Segura
               </span>
             </div>
           </a>
         
         
-          <a href="../files/" title="Arquivos da Estrutura" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../depinjection/" title="Injeção de Dependência" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Próximo
                 </span>
-                Arquivos da Estrutura
+                Injeção de Dependência
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

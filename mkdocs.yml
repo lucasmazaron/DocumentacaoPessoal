@@ -1,7 +1,16 @@
-site_name: Documentação Pessoal
+# Project information
+site_name: 'Documentação Pessoal'
+site_description: 'Anotações de uso pessoal'
+site_author: 'Lucas Mazaron'
+site_url: 'https://documentacao-pessoal.000webhostapp.com/'
+
+# Copyright
+copyright: 'Copyright &copy; 2018 Lucas Mazaron'
+
+# Configuration
 pages:
     - Home: index.md
-    - Angular:
+    - Angular4:
       - Instalação: angular/install.md
       - Nova Aplicação com Angular CLI: angular/newapp.md
       - Iniciar Servidor: angular/startserver.md
@@ -9,7 +18,36 @@ pages:
       - Componentes: angular/components.md
       - Diretivas: angular/directives.md
       - Operador de Navegação Segura: angular/securitynavigationoperator.md
+      - Rotas: angular/routes.md
+      - Injeção de Dependência: angular/depinjection.md
+      - Serviços: angular/services.md
+      - Programação Reativa: angular/reactiveprogramming.md
+      - Forms: angular/forms.md
+    - Python:
+      - Django:
+          - Virtual Env: python/django/virtualenv.md
+          - Instalação: python/django/install.md
+          - Comandos do Django: python/django/commandsDjango.md
     - PIP: pip/pip.md
     - MKDocs: mkdocs/mkdocs.md
+    - Utils: utils.md
     - Sobre: sobre.md
-theme: material
+
+theme:
+  name: material
+  palette:
+    primary: 'Light Blue'
+    accent: 'Blue'
+  #logo: 'notes'
+  language: 'pt'
+
+#Customization
+extra:
+    social:
+    - type: 'github'
+      link: 'https://github.com/lucasmazaron/DocumentacaoPessoal'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite

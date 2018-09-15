@@ -3,4 +3,5 @@
 ```ts
   ng new nome-aplicacao --prefix=exemplo
 ```
-`--prefix= é o prefixo dos componentes que serão gerados na aplicação`
+!!! warning "Atenção"
+    **--prefix=** é o prefixo dos componentes que serão gerados na aplicação

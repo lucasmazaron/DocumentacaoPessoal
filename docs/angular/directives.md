@@ -1,5 +1,8 @@
 # Diretivas
-`Serve para adicionar um comportamento a um elemento do DOM. Não possui template`
+---
+
+!!! question "Para que servem?"
+    Serve para adicionar um comportamento a um elemento do DOM. Não possui template.
 
 **Existem três tipos de diretivas**  
 
@@ -7,12 +10,16 @@
 * Estruturais - Mudam o template/estrutura do DOM. Ex: ngFor - ngIf;  
 * Atributos - Associa um atributo a um elemento do DOM.  
 
-## Estruturais
-`Trabalham com padrão de templates do HTML5.`  
-`o * (asterisco) é a forma abreviada da diretiva para que não precise digitar o elemento template.`
+## Estruturais  
+
+!!! question "Como funcionam?"
+    Trabalham com padrão de templates do HTML5.
+    O * (asterisco) é a forma abreviada da diretiva para que não precise digitar o elemento template.
 
 ### ngIf
-`Permite renderizar um conteúdo caso a condição for verdadeira.`
+
+!!! question "O Que faz?"
+    Renderiza ou não um conteúdo caso a condição for verdadeira.
 
 ```html
   <input type="text" [value]="user.name">
@@ -22,22 +29,24 @@
 ```
 
 ### ngFor
-`Repete o conteúdo de um elemento para cada item de uma coleção de objetos.`
+
+!!! question "O Que faz?"
+    Repete o conteúdo de um elemento para cada item de uma coleção de objetos.
 
 ```html
   <ul>
     <li *ngFor="let user of users">{{user.name}}</li>
   </ul>
 ```
-*Você pode declarar uma variável para indice(Index começa em 0):*  
+!!! tip "Dica"
+    Você pode declarar uma variável para indice(Index começa em 0):
 
-```html
-  <ul>
-    <li *ngFor="let user of users; let i=index">
-      {{i+1}} - {{user.name}}
-    </li>
-  </ul>
-```
+        <ul>
+          <li *ngFor="let user of users; let i=index">
+            {{i+1}} - {{user.name}}
+          </li>
+        </ul>
+
 
 ### ngSwitch
 

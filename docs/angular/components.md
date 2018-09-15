@@ -1,9 +1,17 @@
 # Componentes
-Pequenas partes dependentes reusáveis. Elementos personalizados, dispostos em estrutura de *arvore*, onde na raíz há sempre um component parent seguido dos seus filhos.
+---
 
-* **Classes** com um determinado ciclo de vida;  
-* **Template** para determinar a aparência;  
-* **Selector** (tag) para ser usado por outras partes da aplicação.  
+!!! question "O que são?"
+    Pequenas partes dependentes reusáveis. Elementos personalizados, dispostos em estrutura de *arvore*, onde na raíz há sempre um component parent seguido dos seus filhos.
+
+    São:  
+
+    * **Classes** com um determinado ciclo de vida;  
+
+    Possuem:  
+
+    * **Template** para determinar a aparência;  
+    * **Selector** (tag) para ser usado por outras partes da aplicação.  
 
 ## Decorator *@Component*
 
@@ -23,14 +31,16 @@ Para gerar novo component na aplicação:
   // ou
   ng g c name --spec=false
 ```
-
-`--spec= determina se irá gerar ou não arquivos de testes`
+!!! warning "Atenção"
+    **--spec=** determina se irá gerar ou não arquivos de testes
 
 
 ## Property Binding
-Linkar valor de uma propriedade de um elemento a uma expressão angular.  
-A atualização é sempre em um sentido.  
-**`ONE-WAY BINDING - COMPONENT => TEMPLATE`**  
+
+!!! question "Para que serve?"
+    Linkar valor de uma propriedade de um elemento a uma expressão angular.  
+    A atualização é sempre em um sentido.  
+    **`ONE-WAY BINDING - COMPONENT => TEMPLATE`**  
 
 * Sintaxe:
 
