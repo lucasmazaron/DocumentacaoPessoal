@@ -6,7 +6,7 @@
     * [MKDocs Material docs](https://squidfunk.github.io/mkdocs-material/getting-started/
  ---
 
-#PostgreSQL 
+# PostgreSQL 
 
 ```SQL
 DO
