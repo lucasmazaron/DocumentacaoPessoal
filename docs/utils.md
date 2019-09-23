@@ -37,6 +37,13 @@ BEGIN
       WHEN others THEN
          RAISE EXCEPTION '% %', SQLERRM, SQLSTATE;
    END;
+   
+   
+   BEGIN
+      ALTER TABLE <table_name> ADD COLUMN <column_name> <column_type>;
+   EXCEPTION
+      WHEN duplicate_column THEN RAISE NOTICE 'column <column_name> already exists in <table_name>.';
+   END;
 END;
 $$;
 
