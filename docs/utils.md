@@ -39,4 +39,8 @@ BEGIN
    END;
 END;
 $$;
+
+
+
+CREATE TABLE IF NOT EXISTS myschema.mytable (i integer);
 ```
