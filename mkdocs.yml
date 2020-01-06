@@ -8,9 +8,9 @@ site_url: 'https://documentacao-pessoal.000webhostapp.com/'
 copyright: 'Copyright &copy; 2018 Lucas Mazaron'
 
 # Configuration
-pages:
+nav:
     - Home: index.md
-    - Angular4:
+    - Angular:
       - Instalação: angular/install.md
       - Nova Aplicação com Angular CLI: angular/newapp.md
       - Iniciar Servidor: angular/startserver.md
@@ -23,22 +23,25 @@ pages:
       - Serviços: angular/services.md
       - Programação Reativa: angular/reactiveprogramming.md
       - Forms: angular/forms.md
-    - Python:
-      - Django:
-          - Virtual Env: python/django/virtualenv.md
-          - Instalação: python/django/install.md
-          - Comandos do Django: python/django/commandsDjango.md
+    - Django:
+        - Virtual Env: python/django/virtualenv.md
+        - Instalação: python/django/install.md
+        - Comandos do Django: python/django/commandsDjango.md
     - PIP: pip/pip.md
+    - Mongodb: mongodb/utils.md
+    - NodeJS: node/node.md
     - MKDocs: mkdocs/mkdocs.md
     - Utils: utils.md
     - Sobre: sobre.md
 
 theme:
   name: material
+  font: 'Ubuntu'
+  code: 'Ubuntu Mono'
   palette:
-    primary: 'Light Blue'
-    accent: 'Blue'
-  #logo: 'notes'
+    primary: 'White'
+    accent: 'Indigo'
+  #logo: 'school'
   language: 'pt'
 
 #Customization
