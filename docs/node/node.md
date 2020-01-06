@@ -1,6 +1,6 @@
 # NodeJS
 
-!!! important "Importante"
+!!! note "Nota"
     * O NodeJS é baseado em módulos.
     * Cada arquivo representa um módulo.
     * Importa-se um módulo utilizando `require('nomemodulo')`
@@ -8,14 +8,14 @@
 
 ## Singleton
 
-!!! important "Importante"
+!!! note "Nota"
     * Quando você importa determinado módulo "require('')", atribuindo a uma variável, por padrão o que é retornado é um singleton.
     * Um singleton é um objeto que tem uma unica instancia. É compartilhado com quem pedir aquele mesmo módulo.
 
 
 ## Objeto Global (correspondente do window)
 
-!!! important "Importante"
+!!! note "Nota"
     * __Evitar escopo global__
     * Ao declarar um Objeto em um módulo, ele não é declarado como global.
 
@@ -38,14 +38,14 @@
 
 ## Lodash
 
-!!! important "Importante"
+!!! note "Nota"
     * Lodash não faz parte do core do node. Para utilizar, deve-se instalar o mesmo. `npm i lodash`
     * [Doc. Lodash](https://lodash.com/docs/4.17.15)
 
 
 ## npm init
 
-!!! important "Importante"
+!!! note "Nota"
     * `npm init` cria o __package.json__ que fica guardado as configs da aplicação como módulos a serem baixados quando utilizado `npm i`
 
 * Utilizar --save para que o node salve a dependencia em package.json, Ex.: `npm i lodash --save`. Utilizar --save-dev quando a dependencia for necessária somente para desenvolvimento.
@@ -77,7 +77,7 @@
 
 ## Process (ARGV)
 
-!!! important "Importante"
+!!! note "Nota"
     * `process.argv` retorna todos os parâmetros utilizados na chamado do arquivo node.
 
 > Exemplo de Utilização
@@ -101,7 +101,7 @@
 
 ### STDIN /STDOUT
 
-!!! important "Importante"
+!!! note "Nota"
     * `process.stdout.write()` imprime algo no console
     * `process.stdin.on()` recebe valor digitado pelo usuário
 
@@ -132,4 +132,25 @@
 
 
     files.forEach(f => console.log(f))
+```
+
+## Módulo HTTP
+
+> Ex:
+
+``` javascript
+
+    const http = require('http')
+
+    const server = http.createServer(function(req, res){
+        res.writeHead(200, {"Content-Type": "text/html"})
+        res.end('<h1>Acho que é melhor usar o Express, não?</h1>')
+    })
+    
+    const port = 3000
+
+    server.listen(port, function(){
+        console.log(`Escutando a porte: ${port}`)
+    })    
+
 ```
